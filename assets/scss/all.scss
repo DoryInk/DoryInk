@@ -2,14 +2,14 @@
 @import './base/reset';
 
 //helpers
-@import './helpers/variables.scss';
-@import './helpers/spacing.scss';
+@import './helpers/variables';
+@import './helpers/spacing';
 
 // layout 頁面局
-@import './layout/header.scss';
-@import './layout/footer.scss';
+@import './layout/header';
+@import './layout/footer';
 
 // components元件
-@import './components/navbar.scss';
+@import './components/navbar';
 
-@import './pages/index.scss';
+@import './pages/index';
