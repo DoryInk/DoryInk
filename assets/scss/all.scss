@@ -1,16 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@import './base/reset';
+@import './layout/header.scss';
+@import './layout/footer.scss';
 
-// helpers
-@import './helpers/variables';
-@import './helpers/spacing';
 
-// layout 頁面架構
-@import './layout/header';
-@import './layout/footer';
-
-// components 元件
-@import './components/navbar';
-
-// pages 頁面樣式
-@import './pages/index';
+@import './pages/index.scss';
