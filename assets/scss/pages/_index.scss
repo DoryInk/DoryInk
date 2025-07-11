@@ -1,8 +1,135 @@
-boyd{
-  background-color: #e3f2e9;
+
+//layout --------------------/
+body{
+    background-color: #fff; //#e3f2e9;
+    line-height: 1.5;
+}
+.logoNnm{
+    font-size: 32px;
+    font-weight: bolder;
+    color: $secondary-color;
+    text-decoration: none;
+
+    padding: 0 8px;
 }
 .index-title {
-  font-size: 52px;
-  font-weight: bolder;
-  letter-spacing: -2px;
+    font-size: 52px;
+    font-weight: bolder;
+    letter-spacing: -2px;
+}
+
+//layout END --------------------/
+
+//建議：
+//1.針對 class 下 CSS（可重複使用）
+//2.更有彈性，不會影響全部 <a>
+.nav-item{
+    display: inline-block;
+    .nav-link{
+        display: block;
+        padding: 10px 16px;
+        
+        color: $secondary-color;
+        transition: color 0.3s ease;
+        &:hover{
+            color: $primary-color;
+        }
+    }
+    a{
+        display: block;
+        width: 100%;
+        color: #000;
+    }
+
+    
+}
+
+
+//button --------------------/
+.navbar-toggler-icon {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background-color: $secondary-color; /* 這是中間那條線的顏色 */
+    transition: all 0.3s; /* 過渡效果 */
+  
+    //focus 是一種偽類
+    &:focus{
+        border: 3px solid green;;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: $secondary-color; /* 這是上下兩條線的顏色 */
+        transition: all 0.3s;
+    }
+  
+    &::before {
+        left: 0;
+        top: -8px; /* 上面那條線的位置 */
+    }
+  
+    &::after {
+        left: 0;
+        top: 8px; /* 下面那條線的位置 */
+    }
+}
+
+// navbar --------------------/
+.navbar {
+    position: relative;
+    
+    background-color: #fff;
+
+    .navbar-toggler {
+        display: block; // 預設手機版才看到按鈕
+        background: none;
+        border: none;
+    }
+    
+    // 選單 內容
+    .navbar-nav {
+        display: none; // 預設隱藏（手機）
+        flex-direction: column;
+        list-style: none;
+        padding: 0;
+        gap: 8px;
+        transition: all 0.3s ease;
+
+        //互動效果
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+  
+    // 按下按鈕後展開選單（你可以用 class 控制）
+    &.menu-open .navbar-nav {
+        display: flex;
+        width: 100%;
+
+        //互動效果
+        max-height: 500px; // 根據內容給足夠高度
+    }
+  
+    @media (min-width: 768px) {
+        .navbar-toggler {
+            display: none; // 桌機不顯示按鈕
+        }
+    
+        .navbar-nav {
+            display: flex !important; // 桌機永遠顯示
+            flex-direction: row;
+            margin-left: auto;
+            gap: 16px; //間距
+
+            //互動效果
+            max-height: none; // 桌機無限制
+            overflow: visible;
+        }
+    }
 }
